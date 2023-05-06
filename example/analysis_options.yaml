@@ -25,7 +25,7 @@ dart_code_metrics:
     - prefer-trailing-comma
     - prefer-conditional-expressions
     - no-equal-then-else
-    - avoid-ignoring-return-values
+    # - avoid-ignoring-return-values
     # - avoid-non-null-assertion
     - avoid-unnecessary-conditionals
     - avoid-expanded-as-spacer
