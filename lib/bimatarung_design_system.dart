@@ -12,10 +12,13 @@ export 'src/components/buttons/enum/bt_button_type.dart';
 export 'src/components/card/bt_mail_card.dart';
 export 'src/components/card/enum/bt_mail_card_state.dart';
 export 'src/components/dialog/bt_dialog.dart';
+export 'src/components/snackbar/bt_snackbar.dart';
+export 'src/components/snackbar/enum/bt_snackbar_state.dart';
 
 /* Style */
 export 'src/core/styles/bt_button_style.dart';
 export 'src/core/styles/bt_colors.dart';
+export 'src/core/styles/bt_snackbar_style.dart';
 export 'src/core/styles/bt_text_style.dart';
 /* Theme */
 export 'src/core/theme/bt_theme.dart';
