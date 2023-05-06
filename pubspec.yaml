@@ -8,8 +8,17 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  extended_image: ^7.0.2
   flutter:
     sdk: flutter
+  flutter_screenutil: ^5.7.0
+  flutter_spinkit: ^5.1.0
+  google_fonts: ^4.0.3
+  keyboard_attachable: ^2.1.0
+  nil: ^1.1.1
+  reactive_forms: ^14.3.0
+  shimmer: ^2.0.0
+  tap_debouncer: ^2.0.2
 
 dev_dependencies:
   dart_code_metrics: ^5.7.2
@@ -20,12 +29,11 @@ dev_dependencies:
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
-flutter: null
-# To add assets to your package, add an assets section, like this:
-# assets:
-#   - images/a_dot_burr.jpeg
-#   - images/a_dot_ham.jpeg
-#
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/logo/
+    - assets/images/
 # For details regarding assets in packages, see
 # https://flutter.dev/assets-and-images/#from-packages
 #
@@ -50,3 +58,5 @@ flutter: null
 #
 # For details regarding fonts in packages, see
 # https://flutter.dev/custom-fonts/#from-packages
+flutter_gen:
+  output: lib/src/core/assets/gen/
