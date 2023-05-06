@@ -5,6 +5,8 @@ import 'components/buttons/button_page.dart';
 import 'components/card/mail_card_page.dart';
 import 'components/colors/color_page.dart';
 import 'components/dialog/dialog_page.dart';
+import 'components/images/image_page.dart';
+import 'components/logo/logo_page.dart';
 import 'components/snackbar/snackbar_page.dart';
 import 'components/text_style/text_page.dart';
 
@@ -36,6 +38,8 @@ class HomePage extends StatelessWidget {
             ),
             const _Button(name: 'Buttons', page: ButtonPage()),
             const _Button(name: 'Dialogs', page: DialogPage()),
+            const _Button(name: 'Images', page: ImagePage()),
+            const _Button(name: 'Logo', page: LogoPage()),
             const _Button(name: 'Mail Cards', page: MailCardPage()),
             _Button(name: 'Snackbars', page: SnackbarPage()),
           ],

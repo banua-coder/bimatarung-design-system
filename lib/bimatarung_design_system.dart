@@ -6,6 +6,10 @@ export 'package:nil/nil.dart';
 export 'package:reactive_forms/reactive_forms.dart';
 
 /* Components */
+export 'src/components/assets/bt_assets.dart';
+export 'src/components/assets/enum/bt_asset_type.dart';
+export 'src/components/assets/enum/bt_images.dart';
+export 'src/components/assets/enum/bt_logo.dart';
 export 'src/components/buttons/bt_button.dart';
 export 'src/components/buttons/enum/bt_button_size.dart';
 export 'src/components/buttons/enum/bt_button_type.dart';

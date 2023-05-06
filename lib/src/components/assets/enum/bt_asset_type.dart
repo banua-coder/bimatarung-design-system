@@ -1,0 +1,1 @@
+enum BTAssetType { images, logo }
