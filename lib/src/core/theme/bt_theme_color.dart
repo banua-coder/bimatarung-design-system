@@ -51,6 +51,7 @@ class BTThemeColor extends ThemeExtension<BTThemeColor> {
   final Color? radioActive;
   final Color? bgDefault;
   final Color? bgSecondary;
+  final Color? bgMain;
   final Color? bgError;
   final Color? bgSuccess;
   final Color? bgWarning;
@@ -102,6 +103,7 @@ class BTThemeColor extends ThemeExtension<BTThemeColor> {
     this.radioActive,
     this.bgDefault,
     this.bgSecondary,
+    this.bgMain,
     this.bgError,
     this.bgSuccess,
     this.bgWarning,
@@ -155,6 +157,7 @@ class BTThemeColor extends ThemeExtension<BTThemeColor> {
     Color? radioActive,
     Color? bgDefault,
     Color? bgSecondary,
+    Color? bgMain,
     Color? bgError,
     Color? bgSuccess,
     Color? bgWarning,
@@ -207,6 +210,7 @@ class BTThemeColor extends ThemeExtension<BTThemeColor> {
       radioActive: radioActive ?? this.radioActive,
       bgDefault: bgDefault ?? this.bgDefault,
       bgSecondary: bgSecondary ?? this.bgSecondary,
+      bgMain: bgMain ?? this.bgMain,
       bgError: bgError ?? this.bgError,
       bgSuccess: bgSuccess ?? this.bgSuccess,
       bgWarning: bgWarning ?? this.bgWarning,
@@ -273,6 +277,7 @@ class BTThemeColor extends ThemeExtension<BTThemeColor> {
       radioActive: Color.lerp(radioActive, other.radioActive, t),
       bgDefault: Color.lerp(bgDefault, other.bgDefault, t),
       bgSecondary: Color.lerp(bgSecondary, other.bgSecondary, t),
+      bgMain: Color.lerp(bgMain, other.bgMain, t),
       bgError: Color.lerp(bgError, other.bgError, t),
       bgSuccess: Color.lerp(bgSuccess, other.bgSuccess, t),
       bgWarning: Color.lerp(bgWarning, other.bgWarning, t),
@@ -326,6 +331,7 @@ class BTThemeColor extends ThemeExtension<BTThemeColor> {
     radioActive: BTColors.radioActive,
     bgDefault: BTColors.bgDefault,
     bgSecondary: BTColors.bgSecondary,
+    bgMain: BTColors.bgMain,
     bgError: BTColors.bgError,
     bgSuccess: BTColors.bgSuccess,
     bgWarning: BTColors.bgWarning,
@@ -378,6 +384,7 @@ class BTThemeColor extends ThemeExtension<BTThemeColor> {
     radioActive: BTColors.radioActive,
     bgDefault: BTColors.bgDefault,
     bgSecondary: BTColors.bgSecondary,
+    bgMain:  BTColors.bgMain,
     bgError: BTColors.bgError,
     bgSuccess: BTColors.bgSuccess,
     bgWarning: BTColors.bgWarning,
@@ -432,6 +439,7 @@ class BTThemeColor extends ThemeExtension<BTThemeColor> {
         'radioActive: $radioActive, '
         'bgDefault: $bgDefault, '
         'bgSecondary: $bgSecondary, '
+        'bgMain: $bgMain, '
         'bgError: $bgError, '
         'bgSuccess: $bgSuccess, '
         'bgWarning: $bgWarning, '

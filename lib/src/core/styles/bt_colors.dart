@@ -75,6 +75,7 @@ class BTColors {
   // Background
   static const Color bgDefault = neutral10;
   static const Color bgSecondary = neutral20;
+  static const Color bgMain = Color(0xFFF7F7F7);
   static const Color bgError = Color(0xFFFEF3F2);
   static const Color bgSuccess = Color(0xFFC0F1D4);
   static const Color bgWarning = Color(0xFFFFFAEB);

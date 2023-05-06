@@ -108,6 +108,7 @@ class _ColorPageState extends State<ColorPage> {
         btColor.radioActive,
         btColor.bgDefault,
         btColor.bgSecondary,
+        btColor.bgMain,
         btColor.bgError,
         btColor.bgSuccess,
         btColor.bgWarning,
