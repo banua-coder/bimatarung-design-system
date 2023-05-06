@@ -20,14 +20,15 @@ class BTButtonStyle {
     Color? textColor = BTColors.textPrimary,
     Color? bgColor = BTColors.primary,
     Color? overlayColor = BTColors.primaryDarker,
+    bool forDialog = false,
   }) =>
       ElevatedButton.styleFrom(
-        elevation: 4,
+        elevation: forDialog ? 0 : 4,
         splashFactory: InkSplash.splashFactory,
         minimumSize: Size(ScreenUtil().screenWidth, 48.h),
         backgroundColor: bgColor,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.r),
+          borderRadius: BorderRadius.circular(forDialog ? 100.r : 8.r),
         ),
         foregroundColor: textColor,
         disabledBackgroundColor: BTColors.neutral30,
@@ -37,6 +38,7 @@ class BTButtonStyle {
   static ButtonStyle outline({
     Color? borderColor = BTColors.primary,
     bool disabled = true,
+    bool forDialog = false,
   }) =>
       OutlinedButton.styleFrom(
         elevation: 0,
@@ -44,7 +46,7 @@ class BTButtonStyle {
         minimumSize: Size(ScreenUtil().screenWidth, 48.h),
         backgroundColor: Colors.transparent,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.r),
+          borderRadius: BorderRadius.circular(forDialog ? 100.r : 8.r),
         ),
         side: BorderSide(
           color:
@@ -58,6 +60,7 @@ class BTButtonStyle {
 
   static ButtonStyle text({
     Color? textColor = BTColors.primary,
+    bool forDialog = false,
   }) =>
       TextButton.styleFrom(
         elevation: 0,
@@ -65,6 +68,9 @@ class BTButtonStyle {
         minimumSize: Size(ScreenUtil().screenWidth, 48.h),
         backgroundColor: Colors.transparent,
         foregroundColor: textColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(forDialog ? 100.r : 8.r),
+        ),
         disabledBackgroundColor: Colors.transparent,
         disabledForegroundColor: BTColors.textInactive,
       );

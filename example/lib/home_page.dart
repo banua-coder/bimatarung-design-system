@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'components/buttons/button_page.dart';
 import 'components/card/mail_card_page.dart';
 import 'components/colors/color_page.dart';
+import 'components/dialog/dialog_page.dart';
 import 'components/text_style/text_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -33,6 +34,7 @@ class HomePage extends StatelessWidget {
               title: 'Components',
             ),
             _Button(name: 'Buttons', page: ButtonPage()),
+            _Button(name: 'Dialogs', page: DialogPage()),
             _Button(name: 'Mail Cards', page: MailCardPage()),
           ],
         ),
