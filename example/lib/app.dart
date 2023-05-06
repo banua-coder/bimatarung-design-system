@@ -1,6 +1,8 @@
 import 'package:bimatarung_design_system/bimatarung_design_system.dart';
 import 'package:flutter/material.dart';
 
+import 'home_page.dart';
+
 class App extends StatelessWidget {
   const App({super.key});
 
@@ -16,6 +18,7 @@ class App extends StatelessWidget {
               BTThemeColor.dark,
             ],
           ),
+          home: const HomePage(),
         ),
       );
 }

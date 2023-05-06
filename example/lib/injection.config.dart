@@ -20,7 +20,7 @@ _i1.GetIt init(
   String? environment,
   _i2.EnvironmentFilter? environmentFilter,
 }) {
-  final gh = _i2.GetItHelper(
+  var gh = _i2.GetItHelper(
     getIt,
     environment,
     environmentFilter,
