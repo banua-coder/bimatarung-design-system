@@ -6,6 +6,7 @@ class MailCardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
+        backgroundColor: BTColors.bgMain,
         appBar: AppBar(
           title: const Text('Bimatarung Mail Card Components'),
         ),
@@ -20,11 +21,7 @@ class MailCardPage extends StatelessWidget {
               onTap: () {},
             );
           },
-          separatorBuilder: (_, __) => Divider(
-            color: BTColors.borderDefault,
-            height: 4.sp,
-            thickness: 2.sp,
-          ),
+          separatorBuilder: (_, __) => 8.verticalSpace,
           itemCount: BTMailCardState.values.length,
           shrinkWrap: true,
         ),
