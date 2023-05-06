@@ -20,6 +20,7 @@ class BTButton extends StatelessWidget {
     this.onPressCooldown,
     this.socialIcon,
     this.disabled = false,
+    this.forDialog = false,
   }) : assert(
           child != null || label != null,
           'You must provide one of child or label',
@@ -62,6 +63,10 @@ class BTButton extends StatelessWidget {
   /// default to 'false'
   final bool disabled;
 
+  /// flag check if button is for dialog.
+  /// default to 'false'
+  final bool forDialog;
+
   @override
   Widget build(BuildContext context) => SizedBox(
         height: size.height,
@@ -82,7 +87,11 @@ class BTButton extends StatelessWidget {
           onPressed: () {
             return;
           },
-          style: BTButtonStyle.primary(),
+          style: BTButtonStyle.primary(
+            bgColor: bgColor,
+            textColor: labelColor,
+            forDialog: forDialog,
+          ),
           child: SpinKitFadingCircle(
             size: size.height - 20.h * 1.r,
             color: labelColor ?? _checkColorStyle(type, disabled),
@@ -94,7 +103,10 @@ class BTButton extends StatelessWidget {
           onPressed: () {
             return;
           },
-          style: BTButtonStyle.text(),
+          style: BTButtonStyle.text(
+            forDialog: forDialog,
+            textColor: labelColor,
+          ),
           child: SpinKitFadingCircle(
             size: size.height - 20.h * 1.r,
             color: labelColor ?? _checkColorStyle(type, disabled),
@@ -106,7 +118,9 @@ class BTButton extends StatelessWidget {
             return;
           },
           style: BTButtonStyle.outline(
+            borderColor: labelColor ?? _checkColorStyle(type, disabled),
             disabled: disabled,
+            forDialog: forDialog,
           ),
           child: SpinKitFadingCircle(
             size: size.height - 20.h * 1.r,
@@ -124,6 +138,7 @@ class BTButton extends StatelessWidget {
           style: BTButtonStyle.primary(
             textColor: labelColor,
             bgColor: bgColor,
+            forDialog: forDialog,
           ),
           child: child ??
               ((socialIcon == null)
@@ -164,6 +179,7 @@ class BTButton extends StatelessWidget {
           style: BTButtonStyle.outline(
             borderColor: labelColor,
             disabled: disabled,
+            forDialog: forDialog,
           ),
           child: child ??
               ((socialIcon == null)
@@ -202,6 +218,7 @@ class BTButton extends StatelessWidget {
           onPressed: disabled ? null : onTap,
           style: BTButtonStyle.text(
             textColor: labelColor,
+            forDialog: forDialog,
           ),
           child: child ??
               ((socialIcon == null)
