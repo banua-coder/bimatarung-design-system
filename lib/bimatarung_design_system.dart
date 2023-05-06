@@ -9,6 +9,8 @@ export 'package:reactive_forms/reactive_forms.dart';
 export 'src/components/buttons/bt_button.dart';
 export 'src/components/buttons/enum/bt_button_size.dart';
 export 'src/components/buttons/enum/bt_button_type.dart';
+export 'src/components/card/bt_mail_card.dart';
+export 'src/components/card/enum/bt_mail_card_state.dart';
 
 /* Style */
 export 'src/core/styles/bt_button_style.dart';
