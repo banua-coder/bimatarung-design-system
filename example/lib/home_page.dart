@@ -1,6 +1,7 @@
 import 'package:bimatarung_design_system/bimatarung_design_system.dart';
 import 'package:flutter/material.dart';
 
+import 'components/buttons/button_page.dart';
 import 'components/colors/color_page.dart';
 import 'components/text_style/text_page.dart';
 
@@ -27,6 +28,10 @@ class HomePage extends StatelessWidget {
             ),
             _Button(name: 'Colors', page: ColorPage()),
             _Button(name: 'Text Style', page: TextPage()),
+            _SectionTitle(
+              title: 'Components',
+            ),
+            _Button(name: 'Buttons', page: ButtonPage()),
           ],
         ),
       );
@@ -62,13 +67,13 @@ class _Button extends StatelessWidget {
         padding: EdgeInsets.only(
           top: 16.h,
         ),
-        child: ElevatedButton(
+        child: BTButton(
           onPressed: () async {
             await Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => page),
             );
           },
-          child: Text(name),
+          label: name,
           // disabled: true,
         ),
       );

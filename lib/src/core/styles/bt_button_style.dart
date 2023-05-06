@@ -12,17 +12,7 @@ class BTButtonStyle {
         highlightColor: Colors.transparent,
         splashColor: Colors.transparent,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24.r),
-        ),
-      );
-
-  static ButtonStyle disableButtonPrimary() => FilledButton.styleFrom(
-        minimumSize: Size(double.infinity, 48.h),
-        disabledBackgroundColor: BTColors.neutral40,
-        backgroundColor: BTColors.neutral40,
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24.r),
+          borderRadius: BorderRadius.circular(8.r),
         ),
       );
 
@@ -31,131 +21,51 @@ class BTButtonStyle {
     Color? bgColor = BTColors.primary,
     Color? overlayColor = BTColors.primaryDarker,
   }) =>
-      ButtonStyle(
-        elevation: const MaterialStatePropertyAll(0),
+      ElevatedButton.styleFrom(
+        elevation: 4,
         splashFactory: InkSplash.splashFactory,
-        minimumSize: MaterialStatePropertyAll(Size(double.infinity, 48.h)),
-        backgroundColor: MaterialStatePropertyAll(bgColor),
-        overlayColor: MaterialStatePropertyAll(
-          overlayColor ?? bgColor?.withOpacity(0.05),
+        minimumSize: Size(ScreenUtil().screenWidth, 48.h),
+        backgroundColor: bgColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8.r),
         ),
-        shape: MaterialStatePropertyAll(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(24.r),
-          ),
-        ),
-        foregroundColor: MaterialStatePropertyAll(
-          textColor,
-        ),
-      );
-
-  static ButtonStyle social() => ButtonStyle(
-        elevation: const MaterialStatePropertyAll(0),
-        splashFactory: InkSplash.splashFactory,
-        minimumSize: MaterialStatePropertyAll(Size(double.infinity, 48.h)),
-        backgroundColor: const MaterialStatePropertyAll(BTColors.neutral20),
-        overlayColor: const MaterialStatePropertyAll(
-          BTColors.neutral40,
-        ),
-        shape: MaterialStatePropertyAll(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(24.r),
-          ),
-        ),
-        foregroundColor: const MaterialStatePropertyAll(
-          BTColors.textPrimaryBlack,
-        ),
-      );
-
-  static ButtonStyle cta() => ButtonStyle(
-        elevation: const MaterialStatePropertyAll(0),
-        splashFactory: InkSplash.splashFactory,
-        minimumSize: MaterialStatePropertyAll(Size(double.infinity, 48.h)),
-        backgroundColor: const MaterialStatePropertyAll(BTColors.bgDefault),
-        overlayColor: const MaterialStatePropertyAll(
-          BTColors.neutral20,
-        ),
-        shape: MaterialStatePropertyAll(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(24.r),
-          ),
-        ),
-        foregroundColor: const MaterialStatePropertyAll(
-          BTColors.textMain,
-        ),
+        foregroundColor: textColor,
+        disabledBackgroundColor: BTColors.neutral30,
+        disabledForegroundColor: BTColors.textInactive,
       );
 
   static ButtonStyle outline({
     Color? borderColor = BTColors.primary,
+    bool disabled = true,
   }) =>
-      ButtonStyle(
-        elevation: const MaterialStatePropertyAll(0),
+      OutlinedButton.styleFrom(
+        elevation: 0,
         splashFactory: InkSplash.splashFactory,
-        minimumSize: MaterialStatePropertyAll(Size(double.infinity, 48.h)),
-        backgroundColor: const MaterialStatePropertyAll(Colors.transparent),
-        overlayColor: MaterialStatePropertyAll(
-          borderColor?.withOpacity(0.05),
+        minimumSize: Size(ScreenUtil().screenWidth, 48.h),
+        backgroundColor: Colors.transparent,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8.r),
         ),
-        shape: MaterialStatePropertyAll(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(24.r),
-            side: BorderSide(
-              color: borderColor ?? BTColors.primary,
-            ),
-          ),
+        side: BorderSide(
+          color:
+              disabled ? BTColors.neutral40 : borderColor ?? BTColors.primary,
+          width: 1.sp,
         ),
-        foregroundColor: MaterialStatePropertyAll(
-          borderColor,
-        ),
-      );
-
-  static ButtonStyle outlineDisabled() => ButtonStyle(
-        elevation: const MaterialStatePropertyAll(0),
-        splashFactory: InkSplash.splashFactory,
-        minimumSize: MaterialStatePropertyAll(Size(double.infinity, 48.h)),
-        backgroundColor: const MaterialStatePropertyAll(Colors.transparent),
-        overlayColor: const MaterialStatePropertyAll(
-          BTColors.primarySurface,
-        ),
-        shape: MaterialStatePropertyAll(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(24.r),
-            side: const BorderSide(
-              color: BTColors.neutral50,
-            ),
-          ),
-        ),
-        foregroundColor: const MaterialStatePropertyAll(
-          BTColors.neutral40,
-        ),
+        foregroundColor: borderColor,
+        disabledBackgroundColor: BTColors.neutral20,
+        disabledForegroundColor: BTColors.textInactive,
       );
 
   static ButtonStyle text({
     Color? textColor = BTColors.primary,
   }) =>
-      ButtonStyle(
-        elevation: const MaterialStatePropertyAll(0),
+      TextButton.styleFrom(
+        elevation: 0,
         splashFactory: InkSplash.splashFactory,
-        minimumSize: MaterialStatePropertyAll(Size(double.infinity, 48.h)),
-        backgroundColor: const MaterialStatePropertyAll(Colors.transparent),
-        overlayColor: MaterialStatePropertyAll(
-          textColor?.withOpacity(0.05),
-        ),
-        foregroundColor: MaterialStatePropertyAll(
-          textColor,
-        ),
-      );
-
-  static ButtonStyle textDisabled() => ButtonStyle(
-        elevation: const MaterialStatePropertyAll(0),
-        splashFactory: InkSplash.splashFactory,
-        minimumSize: MaterialStatePropertyAll(Size(double.infinity, 48.h)),
-        backgroundColor: const MaterialStatePropertyAll(Colors.transparent),
-        overlayColor: const MaterialStatePropertyAll(
-          BTColors.primarySurface,
-        ),
-        foregroundColor: const MaterialStatePropertyAll(
-          BTColors.textInactive,
-        ),
+        minimumSize: Size(ScreenUtil().screenWidth, 48.h),
+        backgroundColor: Colors.transparent,
+        foregroundColor: textColor,
+        disabledBackgroundColor: Colors.transparent,
+        disabledForegroundColor: BTColors.textInactive,
       );
 }
