@@ -488,7 +488,7 @@ packages:
     source: hosted
     version: "4.8.1"
   keyboard_attachable:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: keyboard_attachable
       sha256: "4d363742c10aafba414712d518dc6ec733ad796aafa104d2eb6d023a3b91587f"

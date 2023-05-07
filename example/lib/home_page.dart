@@ -1,6 +1,7 @@
 import 'package:bimatarung_design_system/bimatarung_design_system.dart';
 import 'package:flutter/material.dart';
 
+import 'components/bottom_sheet/bottom_sheet_page.dart';
 import 'components/buttons/button_page.dart';
 import 'components/card/mail_card_page.dart';
 import 'components/colors/color_page.dart';
@@ -36,6 +37,7 @@ class HomePage extends StatelessWidget {
             const _SectionTitle(
               title: 'Components',
             ),
+            const _Button(name: 'Bottom Sheets', page: BottomSheetPage()),
             const _Button(name: 'Buttons', page: ButtonPage()),
             const _Button(name: 'Dialogs', page: DialogPage()),
             const _Button(name: 'Images', page: ImagePage()),

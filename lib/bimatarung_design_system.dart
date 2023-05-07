@@ -10,6 +10,7 @@ export 'src/components/assets/bt_assets.dart';
 export 'src/components/assets/enum/bt_asset_type.dart';
 export 'src/components/assets/enum/bt_images.dart';
 export 'src/components/assets/enum/bt_logo.dart';
+export 'src/components/bottom_sheet/bt_bottom_sheet.dart';
 export 'src/components/buttons/bt_button.dart';
 export 'src/components/buttons/enum/bt_button_size.dart';
 export 'src/components/buttons/enum/bt_button_type.dart';
