@@ -31,7 +31,7 @@ class BTRadioListTile<T> extends StatelessWidget {
         groupValue: groupValue,
         onChanged: onChanged,
         title: title,
-        activeColor: BTColors.radioActive,
+        activeColor: BTColors.primary,
         controlAffinity: ListTileControlAffinity.trailing,
         dense: true,
         secondary: secondary,

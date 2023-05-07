@@ -31,7 +31,7 @@ class BTCheckboxListTile extends StatelessWidget {
         ),
         controlAffinity: ListTileControlAffinity.trailing,
         title: title,
-        activeColor: BTColors.radioActive,
+        activeColor: BTColors.primary,
         dense: true,
         subtitle: subtitle,
       );
