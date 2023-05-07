@@ -12,6 +12,7 @@ import 'components/images/image_page.dart';
 import 'components/input_control/input_control_page.dart';
 import 'components/logo/logo_page.dart';
 import 'components/snackbar/snackbar_page.dart';
+import 'components/stepper/timeline_stepper_page.dart';
 import 'components/text_style/text_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -53,6 +54,10 @@ class HomePage extends StatelessWidget {
               page: NotificationCardPage(),
             ),
             _Button(name: 'Snackbars', page: SnackbarPage()),
+            const _Button(
+              name: 'Timeline Stepper',
+              page: TimelineStepperPage(),
+            ),
           ],
         ),
       );
