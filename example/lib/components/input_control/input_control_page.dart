@@ -7,6 +7,8 @@
 import 'package:bimatarung_design_system/bimatarung_design_system.dart';
 import 'package:flutter/material.dart';
 
+import 'checkbox/checkbox_page.dart';
+import 'radio/radio_page.dart';
 import 'text/text_field_page.dart';
 
 class InputControlPage extends StatelessWidget {
@@ -27,8 +29,8 @@ class InputControlPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
               /* Components */
-              // _Button(name: 'Checkbox', page: CheckboxPage()),
-              // _Button(name: 'Radio', page: RadioPage()),
+              _Button(name: 'Checkbox', page: CheckboxPage()),
+              _Button(name: 'Radio', page: RadioPage()),
               // _Button(name: 'Spin Button', page: SpinBoxPage()),
               _Button(name: 'Text Field', page: TextFieldPage()),
             ],
