@@ -16,6 +16,7 @@ export 'src/components/buttons/enum/bt_button_size.dart';
 export 'src/components/buttons/enum/bt_button_type.dart';
 export 'src/components/card/bt_file_picker_card.dart';
 export 'src/components/card/bt_mail_card.dart';
+export 'src/components/card/bt_notification_card.dart';
 export 'src/components/card/enum/bt_mail_card_state.dart';
 export 'src/components/dialog/bt_dialog.dart';
 export 'src/components/input_control/checkbox/bt_checkbox.dart';
