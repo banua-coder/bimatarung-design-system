@@ -8,6 +8,7 @@ import 'components/card/mail_card_page.dart';
 import 'components/colors/color_page.dart';
 import 'components/dialog/dialog_page.dart';
 import 'components/images/image_page.dart';
+import 'components/input_control/input_control_page.dart';
 import 'components/logo/logo_page.dart';
 import 'components/snackbar/snackbar_page.dart';
 import 'components/text_style/text_page.dart';
@@ -43,6 +44,7 @@ class HomePage extends StatelessWidget {
             const _Button(name: 'Dialogs', page: DialogPage()),
             const _Button(name: 'File Picker Card', page: FilePickerCardPage()),
             const _Button(name: 'Images', page: ImagePage()),
+            const _Button(name: 'Input Control', page: InputControlPage()),
             const _Button(name: 'Logo', page: LogoPage()),
             const _Button(name: 'Mail Cards', page: MailCardPage()),
             _Button(name: 'Snackbars', page: SnackbarPage()),
