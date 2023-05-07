@@ -91,34 +91,32 @@ class _TextFieldPageState extends State<TextFieldPage> {
                     },
                   ),
                 ),
-
-                // _Child(
-                //   'Dropdown Field',
-                //   child: CTDropdown<String?>(
-                //     formControl: form.control('genders'),
-                //     hintText: 'Jenis Kelamin',
-                //     label: 'Jenis Kelamin',
-                //     isLabelOutside: true,
-                //     items: const [
-                //       DropdownMenuItem<String?>(
-                //         value: 'Male',
-                //         child: Text('Male'),
-                //       ),
-                //       DropdownMenuItem<String?>(
-                //         value: 'Female',
-                //         child: Text('Female'),
-                //       ),
-                //       DropdownMenuItem<String?>(
-                //         value: 'Non-Binary',
-                //         child: Text('Non-Binary'),
-                //       ),
-                //       DropdownMenuItem<String?>(
-                //         value: 'Prefer Not Mentioned',
-                //         child: Text('Prefer Not Mentioned'),
-                //       ),
-                //     ],
-                //   ),
-                // ),
+                _Child(
+                  'Dropdown Field',
+                  child: BTDropdown<String?>(
+                    formControl: form.control('genders'),
+                    hintText: 'Jenis Kelamin',
+                    label: 'Jenis Kelamin',
+                    items: const [
+                      DropdownMenuItem<String?>(
+                        value: 'Male',
+                        child: Text('Male'),
+                      ),
+                      DropdownMenuItem<String?>(
+                        value: 'Female',
+                        child: Text('Female'),
+                      ),
+                      DropdownMenuItem<String?>(
+                        value: 'Non-Binary',
+                        child: Text('Non-Binary'),
+                      ),
+                      DropdownMenuItem<String?>(
+                        value: 'Prefer Not Mentioned',
+                        child: Text('Prefer Not Mentioned'),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
