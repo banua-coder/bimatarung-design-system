@@ -21,6 +21,7 @@ dependencies:
   reactive_forms: ^14.3.0
   shimmer: ^2.0.0
   tap_debouncer: ^2.0.2
+  timelines: ^0.1.0
 
 dev_dependencies:
   dart_code_metrics: ^5.7.2
