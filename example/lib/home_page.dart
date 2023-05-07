@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'components/bottom_sheet/bottom_sheet_page.dart';
 import 'components/buttons/button_page.dart';
+import 'components/card/file_picker_card_page.dart';
 import 'components/card/mail_card_page.dart';
 import 'components/colors/color_page.dart';
 import 'components/dialog/dialog_page.dart';
@@ -40,6 +41,7 @@ class HomePage extends StatelessWidget {
             const _Button(name: 'Bottom Sheets', page: BottomSheetPage()),
             const _Button(name: 'Buttons', page: ButtonPage()),
             const _Button(name: 'Dialogs', page: DialogPage()),
+            const _Button(name: 'File Picker Card', page: FilePickerCardPage()),
             const _Button(name: 'Images', page: ImagePage()),
             const _Button(name: 'Logo', page: LogoPage()),
             const _Button(name: 'Mail Cards', page: MailCardPage()),

@@ -14,6 +14,7 @@ export 'src/components/bottom_sheet/bt_bottom_sheet.dart';
 export 'src/components/buttons/bt_button.dart';
 export 'src/components/buttons/enum/bt_button_size.dart';
 export 'src/components/buttons/enum/bt_button_type.dart';
+export 'src/components/card/bt_file_picker_card.dart';
 export 'src/components/card/bt_mail_card.dart';
 export 'src/components/card/enum/bt_mail_card_state.dart';
 export 'src/components/dialog/bt_dialog.dart';
