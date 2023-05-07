@@ -8,7 +8,7 @@ enum BTSnackbarState {
 
   BTSnackbarStyle get style {
     switch (this) {
-      case BTSnackbarState.failed:
+      case BTSnackbarState.success:
         return const BTSnackbarStyle(
           bgColor: BTColors.bgSuccess,
           textColor: BTColors.successDarker,
@@ -29,7 +29,7 @@ enum BTSnackbarState {
           actionColor: BTColors.warningDarker,
           borderColor: BTColors.warning,
         );
-      case BTSnackbarState.success:
+      case BTSnackbarState.failed:
         return const BTSnackbarStyle(
           bgColor: BTColors.bgError,
           textColor: BTColors.errorDarker,

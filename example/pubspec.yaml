@@ -35,6 +35,7 @@ dependencies:
     sdk: flutter
   get_it: ^7.4.1
   injectable: ^2.1.1
+  keyboard_attachable: ^2.1.0
 
 dev_dependencies:
   bimatarung_design_system:

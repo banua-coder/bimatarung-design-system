@@ -38,14 +38,14 @@ class BTMailCard extends StatelessWidget {
                       children: [
                         Icon(
                           CupertinoIcons.clock,
-                          size: 14.r,
-                          color: BTColors.textSecondary,
+                          size: 12.r,
+                          color: BTColors.textInactive,
                         ),
                         4.horizontalSpace,
                         Text(
                           createdAt,
-                          style: BTTextStyle.bodySmall(
-                            color: BTColors.textSecondary,
+                          style: BTTextStyle.note(
+                            color: BTColors.textInactive,
                           ),
                         ),
                       ],
@@ -64,7 +64,7 @@ class BTMailCard extends StatelessWidget {
                       ),
                       child: Text(
                         state.name,
-                        style: BTTextStyle.caption(
+                        style: BTTextStyle.note(
                           color: state.textColor,
                           fontWeight: FontWeight.w600,
                         ),
@@ -72,20 +72,22 @@ class BTMailCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                16.verticalSpace,
+                12.verticalSpace,
                 Text(
                   title,
-                  style: BTTextStyle.title4(),
+                  style: BTTextStyle.bodySmall(
+                    fontWeight: FontWeight.w700,
+                  ),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
-                16.verticalSpace,
+                8.verticalSpace,
                 Text(
                   mailNumber.toUpperCase(),
                   textAlign: TextAlign.left,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: BTTextStyle.body(
+                  style: BTTextStyle.note(
                     color: BTColors.primary,
                     fontWeight: FontWeight.w600,
                   ),
