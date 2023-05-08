@@ -4,20 +4,23 @@ import '../../../../bimatarung_design_system.dart';
 
 enum BTMailCardState {
   draft,
-  pending,
   sent,
-  failed;
+  pending,
+  open,
+  disposition,
+  done;
 
   Color get bgColor {
     switch (this) {
       case BTMailCardState.draft:
         return BTColors.bgDefault;
       case BTMailCardState.pending:
-        return BTColors.bgWarning.withOpacity(0.2);
+      case BTMailCardState.open:
       case BTMailCardState.sent:
+      case BTMailCardState.disposition:
+        return BTColors.bgWarning.withOpacity(0.2);
+      case BTMailCardState.done:
         return BTColors.bgSuccess.withOpacity(0.2);
-      case BTMailCardState.failed:
-        return BTColors.bgError.withOpacity(0.2);
     }
   }
 
@@ -26,11 +29,12 @@ enum BTMailCardState {
       case BTMailCardState.draft:
         return BTColors.neutral90;
       case BTMailCardState.pending:
-        return BTColors.warning;
       case BTMailCardState.sent:
+      case BTMailCardState.open:
+      case BTMailCardState.disposition:
+        return BTColors.warning;
+      case BTMailCardState.done:
         return BTColors.success;
-      case BTMailCardState.failed:
-        return BTColors.error;
     }
   }
 
@@ -39,11 +43,12 @@ enum BTMailCardState {
       case BTMailCardState.draft:
         return BTColors.neutral90;
       case BTMailCardState.pending:
-        return BTColors.warning;
+      case BTMailCardState.open:
       case BTMailCardState.sent:
+      case BTMailCardState.disposition:
+        return BTColors.warning;
+      case BTMailCardState.done:
         return BTColors.success;
-      case BTMailCardState.failed:
-        return BTColors.error;
     }
   }
 
@@ -52,11 +57,15 @@ enum BTMailCardState {
       case BTMailCardState.draft:
         return 'Draft';
       case BTMailCardState.pending:
-        return 'Open';
+        return 'Pending';
       case BTMailCardState.sent:
+        return 'Sent';
+      case BTMailCardState.open:
+        return 'Open';
+      case BTMailCardState.disposition:
+        return 'Disposition';
+      case BTMailCardState.done:
         return 'Done';
-      case BTMailCardState.failed:
-        return 'Failed';
     }
   }
 }

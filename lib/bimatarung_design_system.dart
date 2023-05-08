@@ -18,6 +18,7 @@ export 'src/components/card/bt_file_picker_card.dart';
 export 'src/components/card/bt_mail_card.dart';
 export 'src/components/card/bt_notification_card.dart';
 export 'src/components/card/enum/bt_mail_card_state.dart';
+export 'src/components/chips/bt_mail_status_chip.dart';
 export 'src/components/dialog/bt_dialog.dart';
 export 'src/components/input_control/checkbox/bt_checkbox.dart';
 export 'src/components/input_control/checkbox/bt_checkbox_list_tile.dart';
