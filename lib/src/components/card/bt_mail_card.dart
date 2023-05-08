@@ -11,12 +11,14 @@ class BTMailCard extends StatelessWidget {
     required this.title,
     required this.mailNumber,
     required this.createdAt,
+    this.status,
   });
 
   final BTMailCardState state;
   final String title;
   final String mailNumber;
   final String createdAt;
+  final String? status;
   final GestureTapCallback? onTap;
 
   @override
@@ -39,36 +41,20 @@ class BTMailCard extends StatelessWidget {
                         Icon(
                           CupertinoIcons.clock,
                           size: 12.r,
-                          color: BTColors.textInactive,
+                          color: BTColors.neutral60,
                         ),
                         4.horizontalSpace,
                         Text(
                           createdAt,
                           style: BTTextStyle.note(
-                            color: BTColors.textInactive,
+                            color: BTColors.neutral60,
                           ),
                         ),
                       ],
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: state.bgColor,
-                        border: Border.all(
-                          color: state.borderColor,
-                        ),
-                        borderRadius: BorderRadius.circular(100.r),
-                      ),
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 8.w,
-                        vertical: 4.h,
-                      ),
-                      child: Text(
-                        state.name,
-                        style: BTTextStyle.note(
-                          color: state.textColor,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
+                    BTMailStatusChip(
+                      state: state,
+                      label: status,
                     ),
                   ],
                 ),
