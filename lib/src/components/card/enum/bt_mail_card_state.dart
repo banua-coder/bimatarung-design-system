@@ -15,10 +15,11 @@ enum BTMailCardState {
       case BTMailCardState.draft:
         return BTColors.bgDefault;
       case BTMailCardState.pending:
+        return BTColors.bgError.withOpacity(0.2);
       case BTMailCardState.open:
       case BTMailCardState.sent:
-      case BTMailCardState.disposition:
         return BTColors.bgWarning.withOpacity(0.2);
+      case BTMailCardState.disposition:
       case BTMailCardState.done:
         return BTColors.bgSuccess.withOpacity(0.2);
     }
@@ -29,10 +30,11 @@ enum BTMailCardState {
       case BTMailCardState.draft:
         return BTColors.neutral90;
       case BTMailCardState.pending:
+        return BTColors.error;
       case BTMailCardState.sent:
       case BTMailCardState.open:
-      case BTMailCardState.disposition:
         return BTColors.warning;
+      case BTMailCardState.disposition:
       case BTMailCardState.done:
         return BTColors.success;
     }
@@ -43,10 +45,11 @@ enum BTMailCardState {
       case BTMailCardState.draft:
         return BTColors.neutral90;
       case BTMailCardState.pending:
+        return BTColors.error;
       case BTMailCardState.open:
       case BTMailCardState.sent:
-      case BTMailCardState.disposition:
         return BTColors.warning;
+      case BTMailCardState.disposition:
       case BTMailCardState.done:
         return BTColors.success;
     }
