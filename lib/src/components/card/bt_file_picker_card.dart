@@ -65,9 +65,12 @@ class _BTFilePickerCardState extends State<BTFilePickerCard> {
             color: value.style.bgColor,
             borderRadius: BorderRadius.circular(8.r),
             child: InkWell(
-              onTap: widget.fileName != null && widget.fileSize != null
-                  ? widget.onUpdate
-                  : widget.onSelect,
+              onTap: () {
+                widget.fileName != null && widget.fileSize != null
+                    ? widget.onUpdate?.call()
+                    : widget.onSelect?.call();
+                _checkState();
+              },
               onTapUp: (details) {
                 _isTouched.value = true;
                 _checkState();
@@ -134,7 +137,10 @@ class _BTFilePickerCardState extends State<BTFilePickerCard> {
                           ),
                           8.horizontalSpace,
                           IconButton(
-                            onPressed: widget.onDelete,
+                            onPressed: () {
+                              widget.onDelete?.call();
+                              _checkState();
+                            },
                             icon: const Icon(
                               Icons.delete,
                               color: BTColors.error,
