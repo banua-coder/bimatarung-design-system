@@ -17,6 +17,7 @@ export 'src/components/buttons/enum/bt_button_type.dart';
 export 'src/components/card/bt_file_picker_card.dart';
 export 'src/components/card/bt_mail_card.dart';
 export 'src/components/card/bt_notification_card.dart';
+export 'src/components/card/enum/bt_file_picker_state.dart';
 export 'src/components/card/enum/bt_mail_card_state.dart';
 export 'src/components/chips/bt_mail_status_chip.dart';
 export 'src/components/dialog/bt_dialog.dart';
@@ -36,6 +37,7 @@ export 'src/components/stepper/model/stepper_model.dart';
 /* Style */
 export 'src/core/styles/bt_button_style.dart';
 export 'src/core/styles/bt_colors.dart';
+export 'src/core/styles/bt_file_picker_style.dart';
 export 'src/core/styles/bt_snackbar_style.dart';
 export 'src/core/styles/bt_text_style.dart';
 /* Theme */
