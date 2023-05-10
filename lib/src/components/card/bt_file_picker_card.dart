@@ -20,9 +20,9 @@ class BTFilePickerCard extends StatefulWidget {
   final String? fileSize;
   final String placeholder;
   final String errorMessage;
-  final Future? onSelect;
-  final Future? onUpdate;
-  final Future? onDelete;
+  final Future Function()? onSelect;
+  final Future Function()? onUpdate;
+  final Future Function()? onDelete;
 
   @override
   State<BTFilePickerCard> createState() => _BTFilePickerCardState();
@@ -67,8 +67,8 @@ class _BTFilePickerCardState extends State<BTFilePickerCard> {
             child: InkWell(
               onTap: () async {
                 widget.fileName != null && widget.fileSize != null
-                    ? await widget.onUpdate
-                    : await widget.onSelect;
+                    ? await widget.onUpdate?.call()
+                    : await widget.onSelect?.call();
                 _checkState();
               },
               onTapUp: (details) {
@@ -138,7 +138,7 @@ class _BTFilePickerCardState extends State<BTFilePickerCard> {
                           8.horizontalSpace,
                           IconButton(
                             onPressed: () async {
-                              await widget.onDelete;
+                              await widget.onDelete?.call();
                               _checkState();
                             },
                             icon: const Icon(
