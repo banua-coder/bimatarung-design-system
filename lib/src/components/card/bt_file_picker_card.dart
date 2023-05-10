@@ -1,8 +1,8 @@
-
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 
 import '../../../bimatarung_design_system.dart';
+import 'enum/bt_file_picker_state.dart';
 
 class BTFilePickerCard extends StatefulWidget {
   const BTFilePickerCard({
