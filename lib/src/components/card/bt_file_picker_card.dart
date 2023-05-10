@@ -20,9 +20,9 @@ class BTFilePickerCard extends StatefulWidget {
   final String? fileSize;
   final String placeholder;
   final String errorMessage;
-  final GestureTapCallback? onSelect;
-  final GestureTapCallback? onUpdate;
-  final GestureTapCallback? onDelete;
+  final Future? onSelect;
+  final Future? onUpdate;
+  final Future? onDelete;
 
   @override
   State<BTFilePickerCard> createState() => _BTFilePickerCardState();
@@ -65,10 +65,10 @@ class _BTFilePickerCardState extends State<BTFilePickerCard> {
             color: value.style.bgColor,
             borderRadius: BorderRadius.circular(8.r),
             child: InkWell(
-              onTap: () {
+              onTap: () async {
                 widget.fileName != null && widget.fileSize != null
-                    ? widget.onUpdate?.call()
-                    : widget.onSelect?.call();
+                    ? await widget.onUpdate
+                    : await widget.onSelect;
                 _checkState();
               },
               onTapUp: (details) {
@@ -137,8 +137,8 @@ class _BTFilePickerCardState extends State<BTFilePickerCard> {
                           ),
                           8.horizontalSpace,
                           IconButton(
-                            onPressed: () {
-                              widget.onDelete?.call();
+                            onPressed: () async {
+                              await widget.onDelete;
                               _checkState();
                             },
                             icon: const Icon(
