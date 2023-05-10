@@ -85,7 +85,7 @@ class BTTextField extends StatelessWidget with BTFormMixin {
                     ),
                   );
 
-            var labelStyle = isLabelOutside ? BTTextStyle.bodySmall() : null;
+            var labelStyle = isLabelOutside ? BTTextStyle.body() : null;
 
             var formWidget = ReactiveTextField(
               focusNode: focusNode,
