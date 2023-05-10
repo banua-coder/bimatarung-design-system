@@ -74,7 +74,7 @@ class BTDropdown<T> extends StatelessWidget with BTFormMixin {
                     ),
                   );
 
-            var labelStyle = isLabelOutside ? BTTextStyle.bodySmall() : null;
+            var labelStyle = isLabelOutside ? BTTextStyle.body() : null;
 
             var formWidget = ReactiveDropdownField<T?>(
               focusNode: focusNode,
