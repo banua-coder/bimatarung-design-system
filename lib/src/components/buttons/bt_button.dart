@@ -18,7 +18,7 @@ class BTButton extends StatelessWidget {
     this.bgColor,
     this.onPressed,
     this.onPressCooldown,
-    this.socialIcon,
+    this.icon,
     this.disabled = false,
     this.forDialog = false,
   }) : assert(
@@ -56,8 +56,8 @@ class BTButton extends StatelessWidget {
   /// cooldown duration before user can click again
   final Duration? onPressCooldown;
 
-  /// social icon for social button
-  final Widget? socialIcon;
+  /// icon to show next to label
+  final Widget? icon;
 
   /// flag disable button
   /// default to 'false'
@@ -67,17 +67,144 @@ class BTButton extends StatelessWidget {
   /// default to 'false'
   final bool forDialog;
 
+  factory BTButton.secondary({
+    bool debounce = true,
+    BTButtonSize size = BTButtonSize.normal,
+    double? width,
+    Widget? child,
+    String? label,
+    Color? labelColor,
+    Color? bgColor,
+    BTButtonCallback onPressed,
+    Duration? onPressCooldown,
+    Widget? icon,
+    bool disabled = false,
+    bool forDialog = false,
+  }) =>
+      BTButton(
+        debounce: debounce,
+        size: size,
+        width: width,
+        label: label,
+        labelColor: labelColor,
+        bgColor: bgColor,
+        onPressed: onPressed,
+        onPressCooldown: onPressCooldown,
+        type: BTButtonType.secondary,
+        icon: icon,
+        disabled: disabled,
+        forDialog: forDialog,
+        child: child,
+      );
+
+  factory BTButton.primary({
+    bool debounce = true,
+    BTButtonSize size = BTButtonSize.normal,
+    double? width,
+    Widget? child,
+    String? label,
+    Color? labelColor,
+    Color? bgColor,
+    BTButtonCallback onPressed,
+    Duration? onPressCooldown,
+    Widget? icon,
+    bool disabled = false,
+    bool forDialog = false,
+  }) =>
+      BTButton(
+        debounce: debounce,
+        size: size,
+        width: width,
+        label: label,
+        labelColor: labelColor,
+        bgColor: bgColor,
+        onPressed: onPressed,
+        onPressCooldown: onPressCooldown,
+        icon: icon,
+        disabled: disabled,
+        forDialog: forDialog,
+        child: child,
+      );
+
+  factory BTButton.ghost({
+    bool debounce = true,
+    BTButtonSize size = BTButtonSize.normal,
+    double? width,
+    Widget? child,
+    String? label,
+    Color? labelColor,
+    Color? bgColor,
+    BTButtonCallback onPressed,
+    Duration? onPressCooldown,
+    Widget? icon,
+    bool disabled = false,
+    bool forDialog = false,
+  }) =>
+      BTButton(
+        debounce: debounce,
+        size: size,
+        width: width,
+        label: label,
+        labelColor: labelColor,
+        bgColor: bgColor,
+        onPressed: onPressed,
+        onPressCooldown: onPressCooldown,
+        type: BTButtonType.ghost,
+        icon: icon,
+        disabled: disabled,
+        forDialog: forDialog,
+        child: child,
+      );
+
+  factory BTButton.icon({
+    bool debounce = true,
+    BTButtonSize size = BTButtonSize.normal,
+    BTButtonType type = BTButtonType.primary,
+    double? width,
+    Widget? child,
+    String? label,
+    Color? labelColor,
+    Color? bgColor,
+    BTButtonCallback onPressed,
+    Duration? onPressCooldown,
+    required Widget icon,
+    bool disabled = false,
+    bool forDialog = false,
+  }) =>
+      BTButton(
+        debounce: debounce,
+        size: size,
+        width: width,
+        label: label,
+        labelColor: labelColor,
+        bgColor: bgColor,
+        onPressed: onPressed,
+        onPressCooldown: onPressCooldown,
+        type: type,
+        icon: icon,
+        disabled: disabled,
+        forDialog: forDialog,
+        child: child,
+      );
+
   @override
   Widget build(BuildContext context) => SizedBox(
         height: size.height,
         width: width ?? ScreenUtil().screenWidth,
-        child: TapDebouncer(
-          key: key,
-          onTap: onPressed,
-          cooldown: onPressCooldown,
-          waitBuilder: (context, child) => _getWaitBuilder(type),
-          builder: (context, onTap) => _getChildBuilder(type, onTap),
-        ),
+        child: debounce
+            ? TapDebouncer(
+                key: key,
+                onTap: onPressed,
+                cooldown: onPressCooldown,
+                waitBuilder: (context, child) => _getWaitBuilder(type),
+                builder: (context, onTap) => _getChildBuilder(type, onTap),
+              )
+            : Builder(
+                builder: (_) => _getChildBuilder(
+                  type,
+                  onPressed,
+                ),
+              ),
       );
 
   Widget _getWaitBuilder(BTButtonType type) {
@@ -141,7 +268,7 @@ class BTButton extends StatelessWidget {
             forDialog: forDialog,
           ),
           child: child ??
-              ((socialIcon == null)
+              ((icon == null)
                   ? Text(
                       label ?? '',
                       style: size == BTButtonSize.big
@@ -153,20 +280,24 @@ class BTButton extends StatelessWidget {
                             ),
                     )
                   : Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Opacity(
                           opacity: disabled ? 0.2 : 1,
                           child: SizedBox(
                             width: 20.w,
                             height: 20.w,
-                            child: socialIcon!,
+                            child: icon!,
                           ),
                         ),
                         8.horizontalSpace,
                         Flexible(
                           child: Text(
                             label ?? '',
-                            style: BTTextStyle.bodySmall(),
+                            style: BTTextStyle.body(
+                              fontWeight: FontWeight.w500,
+                              color: labelColor ?? bgColor,
+                            ),
                           ),
                         ),
                       ],
@@ -182,7 +313,7 @@ class BTButton extends StatelessWidget {
             forDialog: forDialog,
           ),
           child: child ??
-              ((socialIcon == null)
+              ((icon == null)
                   ? Text(
                       label ?? '',
                       style: size == BTButtonSize.big
@@ -194,20 +325,24 @@ class BTButton extends StatelessWidget {
                             ),
                     )
                   : Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Opacity(
                           opacity: disabled ? 0.2 : 1,
                           child: SizedBox(
                             width: 20.w,
                             height: 20.w,
-                            child: socialIcon!,
+                            child: icon!,
                           ),
                         ),
                         8.horizontalSpace,
                         Flexible(
                           child: Text(
                             label ?? '',
-                            style: BTTextStyle.bodySmall(),
+                            style: BTTextStyle.body(
+                              fontWeight: FontWeight.w500,
+                              color: labelColor ?? bgColor,
+                            ),
                           ),
                         ),
                       ],
@@ -221,7 +356,7 @@ class BTButton extends StatelessWidget {
             forDialog: forDialog,
           ),
           child: child ??
-              ((socialIcon == null)
+              ((icon == null)
                   ? Text(
                       label ?? '',
                       style: size == BTButtonSize.big
@@ -235,20 +370,24 @@ class BTButton extends StatelessWidget {
                             ),
                     )
                   : Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Opacity(
                           opacity: disabled ? 0.2 : 1,
                           child: SizedBox(
                             width: 20.w,
                             height: 20.w,
-                            child: socialIcon!,
+                            child: icon!,
                           ),
                         ),
                         8.horizontalSpace,
                         Flexible(
                           child: Text(
                             label ?? '',
-                            style: BTTextStyle.bodySmall(),
+                            style: BTTextStyle.body(
+                              fontWeight: FontWeight.w500,
+                              color: labelColor ?? bgColor,
+                            ),
                           ),
                         ),
                       ],

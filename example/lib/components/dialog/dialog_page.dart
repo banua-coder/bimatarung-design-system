@@ -40,10 +40,10 @@ class DialogPage extends StatelessWidget {
               label: 'Show Dialog with Custom Content',
               onPressed: () async => showDialog(
                 context: context,
-                builder: (context) => BTDialog(
+                builder: (context) => const BTDialog(
                   title: 'Kirim Sekarang?',
                   content: Column(
-                    children: const [
+                    children: [
                       Text('Hellow'),
                     ],
                   ),
