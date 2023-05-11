@@ -24,10 +24,10 @@ class InputControlPage extends StatelessWidget {
         padding: EdgeInsets.symmetric(
           horizontal: 20.w,
         ),
-        child: SingleChildScrollView(
+        child: const SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               /* Components */
               _Button(name: 'Checkbox', page: CheckboxPage()),
               _Button(name: 'Radio', page: RadioPage()),

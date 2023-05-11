@@ -17,7 +17,7 @@ class BTComponentInit extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MediaQuery(
-        data: MediaQueryData.fromWindow(WidgetsBinding.instance.window),
+        data: MediaQueryData.fromView(WidgetsBinding.instance.window),
         child: LayoutBuilder(
           builder: (_, constraints) {
             if (constraints.maxWidth != 0) {
