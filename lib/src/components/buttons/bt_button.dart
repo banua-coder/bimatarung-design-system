@@ -282,14 +282,7 @@ class BTButton extends StatelessWidget {
                   : Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Opacity(
-                          opacity: disabled ? 0.2 : 1,
-                          child: SizedBox(
-                            width: 20.w,
-                            height: 20.w,
-                            child: icon!,
-                          ),
-                        ),
+                       icon!,
                         8.horizontalSpace,
                         Flexible(
                           child: Text(
@@ -327,14 +320,7 @@ class BTButton extends StatelessWidget {
                   : Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Opacity(
-                          opacity: disabled ? 0.2 : 1,
-                          child: SizedBox(
-                            width: 20.w,
-                            height: 20.w,
-                            child: icon!,
-                          ),
-                        ),
+                        icon!,
                         8.horizontalSpace,
                         Flexible(
                           child: Text(
@@ -372,14 +358,7 @@ class BTButton extends StatelessWidget {
                   : Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Opacity(
-                          opacity: disabled ? 0.2 : 1,
-                          child: SizedBox(
-                            width: 20.w,
-                            height: 20.w,
-                            child: icon!,
-                          ),
-                        ),
+                        icon!,
                         8.horizontalSpace,
                         Flexible(
                           child: Text(
