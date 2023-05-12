@@ -15,11 +15,15 @@ class BTCheckboxListTile extends StatelessWidget {
     this.secondary,
     required this.onChange,
     this.subtitle,
+    this.padding,
+    this.controlAffinity = ListTileControlAffinity.leading,
   });
   final Widget title;
   final bool? value;
   final Widget? secondary;
   final Widget? subtitle;
+  final EdgeInsets? padding;
+  final ListTileControlAffinity controlAffinity;
   final void Function(bool?) onChange;
 
   @override
@@ -29,8 +33,9 @@ class BTCheckboxListTile extends StatelessWidget {
         checkboxShape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4.r),
         ),
-        controlAffinity: ListTileControlAffinity.trailing,
+        controlAffinity: controlAffinity,
         title: title,
+        contentPadding: padding,
         activeColor: BTColors.primary,
         dense: true,
         subtitle: subtitle,
