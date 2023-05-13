@@ -16,6 +16,7 @@ class BTPinput extends StatelessWidget {
     this.keyvoardType = TextInputType.text,
     this.isError = false,
     this.errorText,
+    this.onCompleted,
   });
 
   /// length of pin
@@ -36,6 +37,9 @@ class BTPinput extends StatelessWidget {
   /// Error text to displayed.
   final String? errorText;
 
+  /// Fired when pinput completed.
+  final Function(String)? onCompleted;
+
   @override
   Widget build(BuildContext context) {
     return Pinput(
@@ -43,6 +47,7 @@ class BTPinput extends StatelessWidget {
       length: length,
       textInputAction: TextInputAction.done,
       keyboardType: keyvoardType,
+      onCompleted: onCompleted,
       defaultPinTheme: PinTheme(
         textStyle: BTTextStyle.subHeading(
           fontWeight: FontWeight.w600,
