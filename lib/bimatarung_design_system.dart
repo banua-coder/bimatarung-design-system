@@ -23,6 +23,7 @@ export 'src/components/dialog/bt_dialog.dart';
 export 'src/components/input_control/checkbox/bt_checkbox.dart';
 export 'src/components/input_control/checkbox/bt_checkbox_list_tile.dart';
 export 'src/components/input_control/dropdown/bt_dropdown.dart';
+export 'src/components/input_control/pinput/bt_pinput.dart';
 export 'src/components/input_control/radio/bt_radio.dart';
 export 'src/components/input_control/radio/bt_radio_list_tile.dart';
 export 'src/components/input_control/text/bt_password_field.dart';
