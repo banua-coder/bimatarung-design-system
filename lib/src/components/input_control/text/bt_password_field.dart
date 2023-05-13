@@ -72,6 +72,7 @@ class BTPasswordField extends StatelessWidget with BTFormMixin {
               var floatingLabelStyle = isLabelOutside
                   ? null
                   : BTTextStyle.bodySmall(
+                    fontWeight: FontWeight.w600,
                       color: determineFloatingLabelColor(
                         isFocus!,
                         isValid,
@@ -95,7 +96,9 @@ class BTPasswordField extends StatelessWidget with BTFormMixin {
                 readOnly: readOnly,
                 formControl: formControl as FormControl,
                 maxLength: maxLength,
-                style: BTTextStyle.body(),
+                style: BTTextStyle.body(
+                  fontWeight: FontWeight.w600,
+                ),
                 validationMessages: validationMessages,
                 decoration: InputDecoration(
                   iconColor: determineFloatingLabelColor(

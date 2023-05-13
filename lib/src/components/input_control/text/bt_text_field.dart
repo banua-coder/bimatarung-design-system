@@ -78,6 +78,7 @@ class BTTextField extends StatelessWidget with BTFormMixin {
             var floatingLabelStyle = isLabelOutside
                 ? null
                 : BTTextStyle.bodySmall(
+                    fontWeight: FontWeight.w600,
                     color: determineFloatingLabelColor(
                       isFocus!,
                       isValid,
@@ -99,7 +100,9 @@ class BTTextField extends StatelessWidget with BTFormMixin {
               formControl: formControl as FormControl,
               maxLines: maxLines,
               maxLength: maxLength,
-              style: BTTextStyle.body(),
+              style: BTTextStyle.body(
+                fontWeight: FontWeight.w600,
+              ),
               onTap: onTap,
               decoration: InputDecoration(
                 iconColor: determineFloatingLabelColor(
