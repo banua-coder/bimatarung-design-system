@@ -105,6 +105,7 @@ class BTTextField extends StatelessWidget with BTFormMixin {
               ),
               onTap: onTap,
               decoration: InputDecoration(
+                enabled: enabled,
                 iconColor: determineFloatingLabelColor(
                   isFocus!,
                   isValid,
