@@ -74,11 +74,7 @@ class BTDropdown<T> extends StatelessWidget with BTFormMixin {
                     ),
                   );
 
-            var labelStyle = isLabelOutside
-                ? BTTextStyle.bodySmall(
-                    fontWeight: FontWeight.bold,
-                  )
-                : null;
+            var labelStyle = isLabelOutside ? BTTextStyle.bodySmall() : null;
 
             var formWidget = ReactiveDropdownField<T?>(
               focusNode: focusNode,
@@ -95,6 +91,7 @@ class BTDropdown<T> extends StatelessWidget with BTFormMixin {
               borderRadius: BorderRadius.circular(10.r),
               icon: const Icon(CupertinoIcons.chevron_down),
               decoration: InputDecoration(
+                enabled: enabled,
                 iconColor: determineFloatingLabelColor(
                   isFocus!,
                   isValid,
