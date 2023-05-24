@@ -55,7 +55,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "2.3.0"
+    version: "2.3.1"
   boolean_selector:
     dependency: transitive
     description:
@@ -236,10 +236,10 @@ packages:
     dependency: transitive
     description:
       name: extended_image
-      sha256: "75e4b0ad0f8f63eed7935ff2506c809a670f5e6dd0f61304525879d53fc41a17"
+      sha256: "73b7051722be79f9e8f8c120951fd9d3b22e6153fda6105c322fb88c066952d6"
       url: "https://pub.dev"
     source: hosted
-    version: "7.0.2"
+    version: "8.0.1"
   extended_image_library:
     dependency: transitive
     description:
@@ -755,10 +755,10 @@ packages:
     dependency: transitive
     description:
       name: shimmer
-      sha256: "1f1009b5845a1f88f1c5630212279540486f97409e9fc3f63883e71070d107bf"
+      sha256: "5f88c883a22e9f9f299e5ba0e4f7e6054857224976a5d9f839d4ebdc94a14ac9"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.0"
+    version: "3.0.0"
   sky_engine:
     dependency: transitive
     description: flutter
