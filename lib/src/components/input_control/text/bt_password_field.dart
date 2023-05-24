@@ -32,6 +32,7 @@ class BTPasswordField extends StatelessWidget with BTFormMixin {
     required this.formControl,
     this.validationMessages,
     this.isLabelOutside = true,
+    this.isRequired = false,
   });
 
   final String? label;
@@ -39,6 +40,7 @@ class BTPasswordField extends StatelessWidget with BTFormMixin {
   final int? maxLength;
   final bool readOnly;
   final bool enabled;
+  final bool isRequired;
   final Function(FormControl<Object?>)? onChange;
   final Function(FormControl<dynamic>)? onSubmitted;
 
@@ -174,9 +176,20 @@ class BTPasswordField extends StatelessWidget with BTFormMixin {
                   ? Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          label ?? '',
-                          style: labelStyle,
+                        Row(
+                          children: [
+                            Text(
+                              label ?? '',
+                              style: labelStyle,
+                            ),
+                            if (isRequired)
+                              Text(
+                                '*',
+                                style: labelStyle?.copyWith(
+                                  color: BTColors.error,
+                                ),
+                              ),
+                          ],
                         ),
                         SizedBox(
                           height: 8.h,

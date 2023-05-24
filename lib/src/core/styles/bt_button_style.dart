@@ -22,8 +22,8 @@ class BTButtonStyle {
     Color? overlayColor = BTColors.primaryDarker,
     bool forDialog = false,
   }) =>
-      ElevatedButton.styleFrom(
-        elevation: forDialog ? 0 : 4,
+      FilledButton.styleFrom(
+        elevation: 0,
         splashFactory: InkSplash.splashFactory,
         minimumSize: Size(ScreenUtil().screenWidth, 48.h),
         backgroundColor: bgColor,
