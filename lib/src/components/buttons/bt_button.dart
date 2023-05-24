@@ -210,7 +210,7 @@ class BTButton extends StatelessWidget {
   Widget _getWaitBuilder(BTButtonType type) {
     switch (type) {
       case BTButtonType.primary:
-        return ElevatedButton(
+        return FilledButton(
           onPressed: () {
             return;
           },
@@ -260,7 +260,7 @@ class BTButton extends StatelessWidget {
   Widget _getChildBuilder(BTButtonType type, BTButtonCallback onTap) {
     switch (type) {
       case BTButtonType.primary:
-        return ElevatedButton(
+        return FilledButton(
           onPressed: disabled ? null : onTap,
           style: BTButtonStyle.primary(
             textColor: labelColor,
@@ -282,7 +282,7 @@ class BTButton extends StatelessWidget {
                   : Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                       icon!,
+                        icon!,
                         8.horizontalSpace,
                         Flexible(
                           child: Text(
