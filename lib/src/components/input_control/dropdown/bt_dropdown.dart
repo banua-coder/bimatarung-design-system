@@ -27,6 +27,7 @@ class BTDropdown<T> extends StatelessWidget with BTFormMixin {
     this.validationMessages,
     required this.formControl,
     this.isLabelOutside = true,
+    this.isRequired = false,
     this.onTap,
   });
 
@@ -34,6 +35,7 @@ class BTDropdown<T> extends StatelessWidget with BTFormMixin {
 
   final bool readOnly;
   final bool enabled;
+  final bool isRequired;
 
   final Widget? suffixIcon;
   final Widget? prefixIcon;
@@ -74,11 +76,7 @@ class BTDropdown<T> extends StatelessWidget with BTFormMixin {
                     ),
                   );
 
-            var labelStyle = isLabelOutside
-                ? BTTextStyle.bodySmall(
-                    fontWeight: FontWeight.bold,
-                  )
-                : null;
+            var labelStyle = isLabelOutside ? BTTextStyle.body() : null;
 
             var formWidget = ReactiveDropdownField<T?>(
               focusNode: focusNode,
@@ -156,9 +154,20 @@ class BTDropdown<T> extends StatelessWidget with BTFormMixin {
                 ? Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        label ?? '',
-                        style: labelStyle,
+                      Row(
+                        children: [
+                          Text(
+                            label ?? '',
+                            style: labelStyle,
+                          ),
+                          if (isRequired)
+                            Text(
+                              '*',
+                              style: labelStyle?.copyWith(
+                                color: BTColors.error,
+                              ),
+                            ),
+                        ],
                       ),
                       8.verticalSpace,
                       formWidget,

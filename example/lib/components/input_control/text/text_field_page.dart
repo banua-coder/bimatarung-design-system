@@ -82,6 +82,7 @@ class _TextFieldPageState extends State<TextFieldPage> {
                     onSubmitted: (_) => form.control('phone').focus(),
                     textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.emailAddress,
+                    isRequired: true,
                     hintText: 'Email',
                     label: 'Email',
                     validationMessages: {
