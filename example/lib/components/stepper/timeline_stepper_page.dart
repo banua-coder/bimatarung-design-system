@@ -11,14 +11,18 @@ class TimelineStepperPage extends StatefulWidget {
 class _TimelineStepperPageState extends State<TimelineStepperPage> {
   int index = 0;
   List<StepperModel> _stepper() => [
-        StepperModel(
-          date: ['10 Apr 2023, 11:00'],
-          title: ['Berkas diteruskan ke pada Sekretaris'],
-          description: [
-            'Lorem ipsum dolor sit amet consectetur. Non eget auctor enim id. Lectus porta rhoncus habitasse ut congue volutpat ornare erat magnis. At netus at adipiscing laoreet vitae.',
-          ],
-          typeStatus: ['queued'],
-        ),
+        StepperModel(date: [
+          '10 Apr 2023, 11:00'
+        ], title: [
+          'Berkas diteruskan ke pada Sekretaris'
+        ], description: [
+          'Lorem ipsum dolor sit amet consectetur. Non eget auctor enim id. Lectus porta rhoncus habitasse ut congue volutpat ornare erat magnis. At netus at adipiscing laoreet vitae.',
+        ], typeStatus: [
+          'queued'
+        ], contents: [
+          'File',
+          'Laksanakan'
+        ]),
         StepperModel(
           date: [
             '10 Mei 2023, 11:00',
