@@ -54,7 +54,6 @@ class BTTimelineStepper extends StatelessWidget {
           ),
           Expanded(
             child: Timeline.tileBuilder(
-              physics: const NeverScrollableScrollPhysics(),
               theme: TimelineThemeData(
                 indicatorPosition: 0,
                 nodePosition: 0,
@@ -194,6 +193,34 @@ class BTTimelineStepper extends StatelessWidget {
                             color: BTColors.textSecondary,
                           ),
                         ),
+                        if (progressListStatus[index].contents.isNotEmpty) ...[
+                          8.verticalSpace,
+                          Wrap(
+                            spacing: 4.w,
+                            runSpacing: 4.h,
+                            children: progressListStatus[index]
+                                .contents
+                                .map(
+                                  (e) => Container(
+                                    decoration: BoxDecoration(
+                                      color: BTColors.secondarySurface,
+                                      borderRadius: BorderRadius.circular(20.r),
+                                    ),
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 8.w,
+                                      vertical: 4.h,
+                                    ),
+                                    child: Text(
+                                      e,
+                                      style: BTTextStyle.note(
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                  ),
+                                )
+                                .toList(),
+                          ),
+                        ],
                         Visibility(
                           visible: _showLink(index),
                           child: Padding(

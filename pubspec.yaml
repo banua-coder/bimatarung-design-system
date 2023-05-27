@@ -1,10 +1,10 @@
 name: bimatarung_design_system
 description: A new Flutter package project.
-version: 2.3.1
+version: 2.3.2
 homepage: "https://github.com/banua-coder/bimatarung-design-system"
 
 environment:
-  sdk: ">=2.19.6 <3.0.0"
+  sdk: ">=3.0.1 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
